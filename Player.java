@@ -10,6 +10,9 @@ public class Player
   public Player(String playerName, int startingHealth, double startingGold)
   {
     // ADD CODE HERE
+    playerName = name;
+    startingHealth = health;
+    startingGold = gold;
   }
 
   public String getName()
