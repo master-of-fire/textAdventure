@@ -26,21 +26,30 @@ public class TextAdventure
     input = inScanner.nextLine();
 
     // Change ourHero's name
-    // ADD CODE HERE
-    
+    ourHero.changeName(input);
     // describe the starting situation. Feel free to change this
-    System.out.println("You wake up to find yourself on the edge of a shadowy forest with the sun nearly set. \nYou see what looks like a city in the distance. \nWhat would you like to do? \ncity: go towards the city\nforest: turn around and re-enter the forest\nnap: go back to sleep\n" + ourHero.getName() + ": ");
+    System.out.println("You wake up to find yourself near a shadowy cabin with the lights on. \nYou see what looks like some ruins in the distance. \nWhat would you like to do? \nruins: go towards the ruins\ncabin: turn around and enter the cabin\n" + ourHero.getName() + ": ");
 
     // get user input and go to the appropriate zone based on their input
     // ADD CODE HERE
-
+    input = inScanner.nextLine();
+    System.out.println("You would like to go to "+ input);
+    if(input.equals("ruins")||input.equals("Ruins")){
+      enterZone1();
+    }
+    else if(input.equals("cabin")||input.equals("Cabin")){
+      enterZone2();
+    }
+    else{
+      gameEnd();
+    }
   }
 
   private void enterZone1()
   {
     // change image
     // ADD CODE HERE
-
+    console.setImage("ruins.jpg");
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
@@ -54,7 +63,7 @@ public class TextAdventure
   {
     // change image
     // ADD CODE HERE
-
+    console.setImage("cabin.jpg");
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
