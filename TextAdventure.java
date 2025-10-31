@@ -53,7 +53,26 @@ public class TextAdventure
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
+    System.out.println("After a short walk, you enter the ruins, the walls are slightly damp with rainwater, and there seems to be some plant growth embedded between the bricks, after exploring for a bit, you come across a chest with a skull on it, What do you want to do? \nopen: \ttry to open the chest \nleave: \tdont risk it, you never liked that chest anyway\n"+ourHero.getName()+": "); 
+    if(input.equals("open")||input.equals("Open")){
+          console.setImage("chest.jpg");
+                  ourHero.setGold(25);
+                  System.out.println("You have "+gold+" gold");
+                  System.out.println("The chest was filled with gold!, the skull was probably just to scare people, you gather it up and take a look at your surroundings, you can walk back to the cabin or a cave you spot close by, What do you do? \ncabin: \twalk to the cabin \ncave: \tthe cabin creeps you out, might as well check out the cave\n"+ourHero.getName()+": ");
+                  if(input.equals("cave")||input.equals("Cave")){
+                        enterZone3();
+                  }
+                  if(input.equals("cabin")||input.equals("Cabin")){
+                        enterZone2();
+                  }
 
+    if(input.equals("leave")||input.equals("Leave")){
+      enterZone2();
+    }
+    
+    }
+    
+    
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
 
