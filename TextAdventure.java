@@ -142,15 +142,15 @@ public class TextAdventure
           if(input2.equals("yes")||input2.equals("Yes")){
                 ourHero.setHealth(200);
                 System.out.println("You take the amulet, it pulses with a warm energy, you feel a strange sense of power, your health is now "+ourHero.getHealth()+", you leave the cave and head towards the watchtower you saw earlier");
-                enterZone5();
+                enterZone4();
           }
           if(input2.equals("no")||input2.equals("No")){
                 System.out.println("When you try to leave, you stumble and trip over yourself, your throat begins to itch and a rock hits your head, you crawl out of the cave, your health is now "+(ourHero.getHealth()-50)+", you decide to head towards the watchtower you saw earlier");
-                enterZone5();
+                enterZone4();
           }
         } 
     if(input.equals("exit")||input.equals("Exit")){
-          enterZone5();
+          enterZone4();
     }
 
     // Take action or go to another zone based on their choice
@@ -162,11 +162,25 @@ public class TextAdventure
   {
     // change image
     // ADD CODE HERE
-
+    console.setImage("watchtower.jpg");
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
-
+    System.out.println("The sun has nearly fallen below the horizon as you reach the watchtower, your moment of respite is inerrupted by a pack of wolves with drool dribbling out of their mouths like children in a candy store, you can climb up the watchtower though you are quite tired, or run through some thorns, the thorns will hurt but the wolves will most likely consider you a lost cause. What do you do? \nclimb: climb the tower \nrun: run through the thorns\n"+ourHero.getName()+": ");
+    String input = inScanner.nextLine();
+    if(input.equals("climb")||input.equals("Climb")){
+          ourHero.setHealth(ourHero.getHealth() + 20);
+          System.out.println("you hastily climb the tower, initially the wolves try biting down at your feet, but as they realize their attempts are in vain, they give up and run off to find something else to eat, every bone in your body shakes as you reach the top, but when you make it, you realize you have finally found respite from the dangers of the land, you heal 20 hp");
+          System.out.println("The cool night calms you, You have "+ourHero.getHealth()+" hp");
+          System.out.println("When you wake, you notice a stone altar nearby, it strokes your curiousity, so you decide to go to it");
+          enterZone5();
+    }
+    if(input.equals("run")||input.equals("Run")){
+          ourHero.setHealth(ourHero.getHealth()-50);
+          System.out.println("you rush through the thorns, as they pierce your skin you steel yourself and continue through, you keep running before stumbling down at the foot of a strange altar");
+          enterZone5();
+    }
+    
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
     
@@ -176,11 +190,22 @@ public class TextAdventure
   {
     // change image
     // ADD CODE HERE
-
+    console.setImage("altar.jpg");
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
+    System.out.println("Despite never having seen this altar, you feel it is very important to you and others, but as you are admiring the craftsmanship, you notice someone looking at you from behind one of the pillars, they also realize this and promptly run, at the same time, a massive bear jumps out from behind one of the stones, you can chase the person or try to escape the bear What do you do? \nchase: chase the person \nescape: run somewhere random to escape the bear\n"+ourHero.getName()+": ");
+    String input = inScanner.nextLine();
+    if(input.equals("chase")||input.equals("Chase")){
+    System.out.println("You run after the person, arriving at a strangely familiar place");
+    enterZone6();
+    }
 
+    if(input.equals("escape")||input.equals("Escape")){
+    System.out.println("You inexplicably end up running the same way as the person, arriving at a strangely familiar place");
+    enterZone6();
+    }
+    
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
     
@@ -190,11 +215,12 @@ public class TextAdventure
   {
     // change image
     // ADD CODE HERE
-
+    console.setImage("village.jpg")
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
-
+    System.out.println("You arrive at a village, despite never being there, it seems so familiar, when it hits you, this is YOUR village, you must have been out hunting when you lost your memory");
+    gameEnd();
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
     
