@@ -170,7 +170,7 @@ public class TextAdventure
     String input = inScanner.nextLine();
     if(input.equals("climb")||input.equals("Climb")){
           ourHero.setHealth(ourHero.getHealth() + 20);
-          System.out.println("you hastily climb the tower, initially the wolves try biting down at your feet, but as they realize their attempts are in vain, they give up and run off to find something else to eat, every bone in your body shakes as you reach the top, but when you make it, you realize you have finally found respite from the dangers of the land, you heal 20 hp");
+          System.out.println("you hastily climb the tower, initially the wolves try biting down at your feet, but as they realize their attempts are in vain, they give up and run off to find something else to eat, every bone in your body shakes as you reach the top, but when you make it, you realize you have found a bit of respite from the dangers of the land, you heal 20 hp");
           System.out.println("The cool night calms you, You have "+ourHero.getHealth()+" hp");
           System.out.println("When you wake, you notice a stone altar nearby, it strokes your curiousity, so you decide to go to it");
           enterZone5();
@@ -219,7 +219,7 @@ public class TextAdventure
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
-    System.out.println("You arrive at a village, despite never being there, it seems so familiar, when it hits you, this is YOUR village, you must have been out hunting when you lost your memory");
+    System.out.println("You arrive at a village, despite never being there, it seems so familiar, when it hits you, this is YOUR village, you must have been out hunting when you lost your memory, many of the people embrace you and you finally feel safe as you take a rest");
     gameEnd();
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
@@ -229,6 +229,8 @@ public class TextAdventure
   private void gameEnd()
   {
     // ADD CODE HERE
+    System.out.println("Your hp is "+ourHero.getHealth()+", you have "+ourHero.getGold()+" gold");
+    System.out.println("You won!");
 
     inScanner.close();
   }
