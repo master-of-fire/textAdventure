@@ -60,10 +60,11 @@ public class TextAdventure
                   ourHero.setGold(25);
                   System.out.println("You have "+ourHero.getGold()+" gold");
                   System.out.println("The chest was filled with gold!, the skull was probably just to scare people, you gather it up and take a look at your surroundings, you can walk back to the cabin or a cave you spot close by, What do you do? \ncabin: walk to the cabin \ncave: the cabin creeps you out, might as well check out the cave\n"+ourHero.getName()+": ");
-                  if(input.equals("cave")||input.equals("Cave")){
+                  String chestInput = inScanner.nextLine();
+                  if(chestInput.equals("cave")||chestInput.equals("Cave")){
                         enterZone3();
                   }
-                  if(input.equals("cabin")||input.equals("Cabin")){
+                  if(chestInput.equals("cabin")||chestInput.equals("Cabin")){
                         enterZone2();
                   }
   }              
@@ -89,9 +90,9 @@ public class TextAdventure
     // Give them options for choices.
     // ADD CODE HERE
     System.out.println("You find yourself outside a strange cabin, despite the unnerving exterior, something about it beckons you to enter, but you also spot a cave not too far off. What do you do? \nenter: walk into the cabin \ncave: the cabin creeps you out, might as well check out the cave\n"+ourHero.getName()+": ");
-    String zone2input = inScanner.nextLine();
+    String cabinInput = inScanner.nextLine();
 
-    if(zone2input.equals("enter")||zone2input.equals("Enter")){
+    if(cabinInput.equals("enter")||cabinInput.equals("Enter")){
           console.setImage("cabin_interior.jpg");
           System.out.println("On entering the cabin, you are greeted by a cozy interior, with a warm fire crackling in the hearth. An old man sits in a rocking chair, beckoning you to sit, despite the initial creepiness, you feel a strange comfort here. Upon sitting, the man offers a deal, a simple coinflip, if you win, he gives you 50 gold, if you lose, you give him 20 health. Do you accept? \nyes: accept the coinflip \nno: politely decline and leave the cabin\n"+ourHero.getName()+": ");
           String input2 = inScanner.nextLine();
@@ -105,11 +106,11 @@ public class TextAdventure
               ourHero.setHealth(ourHero.getHealth() - 20);
               System.out.println("You lost! Your health is now "+ourHero.getHealth());
               System.out.println("The man looks at the coin with a gleam in his eye, you feel your energy drain as you pay your debt");
-          }
-        } 
+              }  
+          }  
             else if(input2.equals("no")||input2.equals("No")){
               System.out.println("You politely decline and leave the cabin, you feel a strange sense of relief, you continue on your journey");
-        }
+            }
 
           System.out.println("You step outside the cabin, the sun is setting. You can head to the cave or to a watchtower you see in the distance. What do you do? \ncave: check out the cave \ntower: head to the watchtower\n"+ourHero.getName()+": ");
           String input3 = inScanner.nextLine();
@@ -120,7 +121,7 @@ public class TextAdventure
                 enterZone4();
           }
       }
-    if(zone2input.equals("cave")||zone2input.equals("Cave")){
+    if(cabinInput.equals("cave")||cabinInput.equals("Cave")){
           enterZone3();
     }
   }
@@ -167,15 +168,15 @@ public class TextAdventure
     // Give them options for choices.
     // ADD CODE HERE
     System.out.println("The sun has nearly fallen below the horizon as you reach the watchtower, your moment of respite is inerrupted by a pack of wolves with drool dribbling out of their mouths like children in a candy store, you can climb up the watchtower though you are quite tired, or run through some thorns, the thorns will hurt but the wolves will most likely consider you a lost cause. What do you do? \nclimb: climb the tower \nrun: run through the thorns\n"+ourHero.getName()+": ");
-    String input = inScanner.nextLine();
-    if(input.equals("climb")||input.equals("Climb")){
+    String towerInput = inScanner.nextLine();
+    if(towerInput.equals("climb")||towerInput.equals("Climb")){
           ourHero.setHealth(ourHero.getHealth() + 20);
           System.out.println("you hastily climb the tower, initially the wolves try biting down at your feet, but as they realize their attempts are in vain, they give up and run off to find something else to eat, every bone in your body shakes as you reach the top, but when you make it, you realize you have found a bit of respite from the dangers of the land, you heal 20 hp");
           System.out.println("The cool night calms you, You have "+ourHero.getHealth()+" hp");
           System.out.println("When you wake, you notice a stone altar nearby, it strokes your curiousity, so you decide to go to it");
           enterZone5();
     }
-    if(input.equals("run")||input.equals("Run")){
+    if(towerInput.equals("run")||towerInput.equals("Run")){
           ourHero.setHealth(ourHero.getHealth()-50);
           System.out.println("you rush through the thorns, as they pierce your skin you steel yourself and continue through, you keep running before stumbling down at the foot of a strange altar");
           enterZone5();
@@ -215,7 +216,7 @@ public class TextAdventure
   {
     // change image
     // ADD CODE HERE
-    console.setImage("village.jpg")
+    console.setImage("village.jpg");
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE

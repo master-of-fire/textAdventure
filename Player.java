@@ -11,7 +11,7 @@ public class Player
   {
     // ADD CODE HERE
     playerName = name;
-    startingHealth = health;
+    startingHealth = 100;
     startingGold = gold;
   }
 
