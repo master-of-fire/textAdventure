@@ -50,6 +50,7 @@ public class TextAdventure
     // change image
     // ADD CODE HERE
     console.setImage("ruins.jpg");
+    ourHero.setHealth(100);
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
@@ -131,7 +132,7 @@ public class TextAdventure
   {
     // change image
     // ADD CODE HERE
-    console.setImage("crystals.jpg");
+    console.setImage("crystal.jpg");
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
